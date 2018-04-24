@@ -1,30 +1,27 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
 
 
 import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
-import {LoginComponent} from './auth/login/login.component';
-import {HeaderComponent} from './header/header.component';
-import {RoutingModule} from './routing.module';
+import {AppRoutingModule} from './app-routing.module';
 import {AuthGuardService} from './auth/auth-guard.service';
-import {AuthService} from './auth/auth.service';
-import {FormsModule} from '@angular/forms';
+import {CoreModule} from './core/core.module';
+import {AuthModule} from './auth/auth.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    LoginComponent,
-    HeaderComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    RoutingModule,
-    FormsModule
+    AppRoutingModule,
+    FormsModule,
+    CoreModule,
+    AuthModule
   ],
-  providers: [AuthGuardService, AuthService],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
-import {AuthService} from '../auth.service';
+import {AuthService} from '../../auth/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,6 @@ export class LoginComponent implements OnInit {
     const email = form.value.email;
     const pass = form.value.password;
     this.authService.login(email, pass);
-    console.log('jestem');
     this.router.navigate(['home']);
   }
 }
