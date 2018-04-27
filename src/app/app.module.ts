@@ -8,6 +8,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AuthGuardService} from './auth/auth-guard.service';
 import {CoreModule} from './core/core.module';
 import {AuthModule} from './auth/auth.module';
+import {CharacterModule} from './character/character.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {AuthModule} from './auth/auth.module';
     AppRoutingModule,
     FormsModule,
     CoreModule,
-    AuthModule
+    AuthModule,
+    CharacterModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]

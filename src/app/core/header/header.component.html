@@ -3,19 +3,27 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" href="#">Strona główna <span class="sr-only">(current)</span></a>
+        <a class="nav-link"
+           routerLink="/home"
+           [ngClass]="{'disabled': !isAuthenticated()}">Strona główna <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" href="#">Lista postaci</a>
+        <a class="nav-link" routerLink="/characterList" [ngClass]="{'disabled': !isAuthenticated()}">Lista postaci</a>
       </li>
-      <li class="nav-item dropdown navbar-right" appDropdown >
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    </ul>
+    <ul class="navbar-nav" style="margin-left: 10px">
+      <li class="nav-item dropdown" appDropdown>
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false"
+           [ngClass]="{'disabled': !isAuthenticated()}">
           Dropdown
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Zarządzaj</a>
+          <a class="dropdown-item" routerLink="/home"
+             [ngClass]="{'disabled': !isAuthenticated()}">Zarządzaj</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Wyloguj</a>
+          <a class="dropdown-item" routerLink="/home"
+             [ngClass]="{'disabled': !isAuthenticated()}">Wyloguj</a>
         </div>
       </li>
     </ul>
